@@ -1,0 +1,12 @@
+version: 1.0
+runtime: php81
+build:
+  commands:
+    build:
+      - PYTHON=python2 amazon-linux-extras install epel
+      - yum -y install supervisor
+run:
+  command: supervisord
+  network:
+    port: 8080
+    env: 8092
